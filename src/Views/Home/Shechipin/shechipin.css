@@ -1,0 +1,14 @@
+
+    .SPdapaituijian .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        transition: 300ms;
+        transform: scale(0.9);
+      }
+      .SPdapaituijian .swiper-slide-active,.SPdapaituijian .swiper-slide-duplicate-active{
+        transform: scale(1.5);
+        z-index: 100;
+
+      }
