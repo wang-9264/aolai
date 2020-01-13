@@ -1,0 +1,51 @@
+.isset_index{
+    width: 100%;
+    background: #f8f8f8;
+    height: 6.5rem;
+
+}
+.isset_head{
+    height: .48rem;
+    line-height: .48rem;
+    font-size: .16rem;
+    color: #000;
+    text-align: center;
+    position: relative;
+    font-weight: 600;
+    background: #fff;
+}
+.isset_icon{
+    position: absolute;
+    left: 0;
+    font-size: .28rem;
+    margin-left: .1rem;
+}
+.isset_nav{
+    width: 100%;
+    padding-top: .1rem;
+}
+.isset_nav_li{
+    height: .48rem;
+    line-height: .48rem;
+    font-size: .14rem;
+    padding-left: .15rem;
+    border-bottom: .01rem solid #ccc;
+    background: #fff;
+}
+.isset_nav_div{
+    float: right;
+    padding-right: .15rem;
+    font-size: .18rem;
+}
+.isset_btn{
+    background: #f35;
+    width: 3.187rem;
+    height: .44rem;
+    color: #ffffff;
+    border: 0;
+    border-radius: .1rem;
+    margin-left: 7%;
+    margin-top: .2rem;
+    font-size: .2rem;
+    font-weight: 700;
+}

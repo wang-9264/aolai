@@ -1,0 +1,73 @@
+
+.index {
+    width: 3.75rem;
+    height: 1.35rem;
+    border: 0.01rem solid #eee;
+}
+
+.head {
+    height: .4rem;
+    font-size: .16rem;
+    text-align: center;
+    line-height: .4rem;
+    font-weight: 700;
+    border-bottom: .01rem solid #eee;
+}
+
+.leftLi span {
+    position: absolute;
+    line-height: .4rem;
+    font-size: .2rem;
+    margin-left: .1rem;
+}
+
+.PopularityImg {
+    width: 1.3541rem;
+    height: 1.3541rem;
+    float: left;
+}
+
+.PopularityNavRight {
+    float: left;
+    width: 1.7916rem;
+    margin-top: 0.08rem;
+}
+
+.PopularitySpan {
+    display: inline-block;
+    font-size: .12rem;
+    color: #666666;
+    overflow: hidden;
+    height: .61rem;
+    width: 1.7916rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    line-height: .2rem;
+}
+
+.PopularityH3 {
+    color: #666666;
+    font-size: 15px;
+    margin: 0.02rem 0;
+}
+.PopularityLike{
+    font-size: .12rem;
+    color:#D61518;
+}
+.PopularityLike_li1{
+    float: left;
+    /* width: .05rem; */
+    height: 20px;
+}
+.PopularityLike_li2{
+    float: left;
+    margin-left: .09rem;
+    margin-top: .01rem;
+}
+.PopularityLike_li3{
+    float: right;
+}

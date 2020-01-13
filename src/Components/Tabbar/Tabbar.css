@@ -1,0 +1,22 @@
+.tabbar_index {
+    height:.528rem;
+    background: #eee;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    width: 375px;
+}
+.tabbar_yangshi{
+    float: left;
+    width: 20%;
+    text-align: center;
+    color: #666666;
+    font-size: .12rem;
+    margin-top: .05rem;
+}
+.tabbar_icon{
+    font-size: .25rem;
+}
+.tabbar_color{
+    color: red;
+}

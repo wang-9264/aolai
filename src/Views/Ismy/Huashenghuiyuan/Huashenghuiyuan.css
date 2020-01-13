@@ -1,0 +1,13 @@
+.member_touxiang{
+height: .93rem;
+}
+.member_img{
+    height: .7rem;
+    float: right;
+    margin-right: .16rem;
+}
+.member_avatar{
+    float: left;
+    line-height: .93rem;
+    margin-left: .16rem;
+}
