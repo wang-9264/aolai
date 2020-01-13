@@ -5,7 +5,9 @@ import './App.css';
 
 class App extends Component{
   render(){
-    return <div>111</div>
+    return <div>
+      {this.props.children}
+    </div>
   }
 }
 

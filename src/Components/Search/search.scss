@@ -1,0 +1,56 @@
+.wang_list_searchbar{
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    background-color: #fff;
+    height: 0.48rem;
+    width: 100%;
+    .wang_list_searchbar_icon{
+        color: #999;
+    width: 0.48rem;
+    height: 0.48rem;
+    text-align: center;
+    line-height: 0.50rem;
+    float: left;
+    }
+    .search-form{
+        float: right;
+        padding-right: 0.5rem;
+        width: 2.81rem;
+        flex: 1;
+        display: flex;
+        height: 100%;
+        // border: 1px solid #d1d1d1;
+        align-items: center;
+        .search-form-lable{
+            height: 30px;
+            flex: 1;
+            display: block;
+            position: relative;
+        }
+        .search-form-input{
+            border: 1px solid #d1d1d1;
+            height: 100%;
+            width: 100%;
+            font-size: 0.12rem;
+            color: #999;
+            text-indent: 0.08rem;
+            border-radius: 0.03rem;
+            display: block;
+            flex: 1;
+            position: absolute;
+        }
+        .search-form-sousuo{
+            position: absolute;
+            top: -0.1rem;
+            right: -0.1rem;
+            z-index: 99;
+            color: #999;
+            width: 0.48rem;
+            height: 0.48rem;
+            text-align: center;
+            line-height: 0.5rem;
+            display: block;
+        }
+    }
+}

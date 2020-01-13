@@ -1,0 +1,148 @@
+.item_top{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    // background: red;
+    p{
+        text-align: center;
+        height: 0.52rem;
+        line-height: 0.52rem;
+        color: #333;
+        span{
+            position: relative;
+            &::before{
+                content: '';
+                display: block;
+                width: 0.16rem;
+                height: 0.02rem;
+                background: #333;
+                position: absolute;
+                left: -0.26rem;
+                top: 0.07rem;
+            }
+            &::after{
+                content: '';
+                display: block;
+                width: 0.16rem;
+                height: 0.02rem;
+                background: #333;
+                position: absolute;
+                right: -0.26rem;
+                top: 0.07rem;
+            }
+        }
+    }
+    div{
+        margin: 0 0.1rem 0 0.22rem;
+        // background: yellow;
+        div{
+            margin-left: -0.09rem;
+            display: flex;
+            flex-flow: row wrap;
+            // background: green;
+            span{
+                display: block;
+                width: 0.73rem;
+                height: 1.02rem;
+                margin-left: 0.11rem;
+                // background: pink;
+                div{
+                    width: 0.73rem;
+                    height: 0.73rem;
+                    line-height: 0.73rem;
+                    img{
+                        margin: 0 auto;
+                        max-width: 100%;
+                        display: inline-block;
+                        vertical-align: middle;
+                        margin-top: -3px;
+                        margin-left: 0.07rem;
+                    }
+                }
+                p{
+                    text-align: center;
+                    line-height: 1;
+                    margin-top: 0.05rem;
+                    font-size: 0.115rem;
+                    color: #666;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+        }
+    }
+}
+.item_bottom{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    // background: red;
+    p{
+        text-align: center;
+        height: 0.52rem;
+        line-height: 0.52rem;
+        color: #333;
+        span{
+            position: relative;
+            &::before{
+                content: '';
+                display: block;
+                width: 0.16rem;
+                height: 0.02rem;
+                background: #333;
+                position: absolute;
+                left: -0.26rem;
+                top: 0.07rem;
+            }
+            &::after{
+                content: '';
+                display: block;
+                width: 0.16rem;
+                height: 0.02rem;
+                background: #333;
+                position: absolute;
+                right: -0.26rem;
+                top: 0.07rem;
+            }
+        }
+    }
+    div{
+        margin: 0 0.16rem;
+        // background: yellow;
+        div{
+            display: flex;
+            flex-flow: row wrap;
+            margin-left: -0.001rem;
+            // background: green;
+            span{
+                display: block;
+                width: 0.94rem;
+                height: 0.52rem;
+                line-height: 0.52rem;
+                border: 0.01rem solid #d1d1d1;
+                margin-bottom: 0.11rem;
+                margin-left: 0.11rem;
+                text-align: center;
+                // background: pink;
+                div{
+                    overflow: hidden;
+                    width: 100%;
+                    height: 100%;
+                    img{
+                        margin: 0 auto;
+                        max-height: 0.52rem;
+                        max-width: 100%;
+                        display: inline-block;
+                        vertical-align: middle;
+                        margin-top: -0.02rem;
+                        margin-left: -0.0005rem;
+                        
+                    }
+                }
+            }
+        }
+    }
+}

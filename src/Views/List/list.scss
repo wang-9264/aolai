@@ -1,0 +1,114 @@
+.wang_list{
+    width: 100%;
+    .wang_list_bar{
+        overflow: hidden;
+        text-align: center;
+        // align-items: center;
+        height: 0.36rem;
+        line-height: 0.36rem;
+        background-color: #fff;
+        border-bottom: 1px solid #d9d9d9;
+        border-top: 1px solid #d9d9d9;
+        font-size: 12px;
+        position: absolute;
+        top: 0.5rem;
+        width: 100%;
+        z-index: 7;
+        list-style: none;
+        // background: pink;
+        padding-left: 0;
+        li{
+            width: 21.5%;
+            float: left;
+            font-size: 12px;
+            color: #000000;
+            // background: green;
+        }
+        .wang_list_bar_change{
+            width: 14%;
+            font-size: 14px;
+        }
+    }
+    .wang_list_wrap{
+        position: absolute;
+        top: 0.9rem;
+        bottom: 0;
+        width: 100%;
+        overflow: hidden;
+        overflow-y: auto;
+        .wang_list_info{
+            border-right: .5px solid #f0f0f0;
+            height: 2.81rem;
+            // height: 27rem;
+            overflow: hidden;
+            box-sizing: border-box;
+            display: block;
+            width: 50%;
+            float: left;
+            // background: green;
+            .wang_list_info_top{
+                width: 99.9%;
+                height: 1.99rem;
+                overflow: hidden;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                }
+            }
+            .wang_list_info_under{
+                padding-left: 5px;
+                padding-right: 5px;
+                box-sizing: border-box;
+                .wang_list_info_under_top{
+                    height: auto;
+                    min-height: 0.15rem;
+                    font-size: 0.12rem;
+                    line-height: 0.18rem;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    color: #333;
+                    padding-top: 0.13rem;
+                    span{
+                        background: #ed4847;
+                        color: #fff;
+                        font-size: 12px;
+                        padding: 0.02rem 0.03rem;
+                        margin-right: 0.04rem;
+                        border-radius: 0.02rem;
+                        white-space: nowrap;
+                        
+                    }
+                }
+                .wang_list_info_under_bottom{
+                    font-size: 12px;
+                    position: relative;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    max-width: 100%;
+                    text-overflow: ellipsis;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    .wang_list_info_under_bottom_left{
+                        font-size: 15px;
+                        color: #f34;
+                    }
+                    .wang_list_info_under_bottom_right{
+                        font-size: 12px;
+                        color: #999;
+                        text-decoration: line-through;
+                    }
+                }
+            }
+        }
+    }
+    .backToTop{
+        width: 0.4rem;
+        height: 0.4rem;
+        // bottom: 0.2rem;
+        z-index: 99999;
+    }
+}
