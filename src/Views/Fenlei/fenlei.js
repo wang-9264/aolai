@@ -8,6 +8,7 @@ import {getList} from '../../Redux/Actions/list'
 import Item from './Item/item'
 import './fenlei.scss'
 import Search from '../../Components/Search/search'
+import Brands from './Brands/brands'
 
 const { TabPane } = Tabs;
 function callback(key) {
@@ -33,7 +34,7 @@ class Fenlei extends Component {
                 {
                   this.props.datalist[0].cons.map((item,index)=>
                         <TabPane tab={item.title} key={index+1} size="small" tabBarGutter={1}>
-                          {index===1?null:
+                          {index===1?<Brands></Brands>:
                         <Item item={this.props.datalist[index+1]}></Item>
                       }
                         </TabPane> 

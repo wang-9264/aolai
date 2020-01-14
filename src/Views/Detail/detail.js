@@ -85,11 +85,11 @@ class Detail extends Component {
             type:'GET',
             url:`https://productapi.aolaigo.com/handler/command.ashx?cmd=getsku&v=2&skuId=${this.props.match.params.detailid}&app_version=4.2.00&_=1578808866002`,
             success(res){
-                console.log(444,(JSON.parse(res)).Data,5555555)
+                // console.log(444,(JSON.parse(res)).Data,5555555)
                 that.setState({
                     detailinfo:JSON.parse(res).Data
                 })
-                console.log(that.state.detailinfo,66666)
+                // console.log(that.state.detailinfo,66666)
                 
             }
         })
@@ -114,7 +114,7 @@ class Detail extends Component {
         // })
     }
     handleClick(){
-        console.log(this.props.history,77777)
+        // console.log(this.props.history,77777)
         this.props.history.goBack()
     }
     

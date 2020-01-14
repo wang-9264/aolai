@@ -24,7 +24,7 @@ class List extends Component{
                 // clickid:res.data.Data.MainOutputVM.OutputSkuInfoVMs
             })
             
-            console.log(this.state.input,1111)
+            // console.log(this.state.input,1111)
         })
     }
     render(){
@@ -65,7 +65,7 @@ class List extends Component{
     }
 
     handleClick = (id,item)=>{
-        console.log(this.props)
+        // console.log(this.props)
         this.props.history.push(`/detail/${id}`)
         this.props.sendList(item)
     }

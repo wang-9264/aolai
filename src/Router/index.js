@@ -11,6 +11,7 @@ import Home from "@/Views/Home/home";
 import Fenlei from '../Views/Fenlei/fenlei'
 import List from '../Views/List/list'
 import Detail from '../Views/Detail/detail'
+import SearchAll from '@/Components/Search/searchAll'
 
 //后三页
 import Popularity from '../Views/Popularity/Popularity'
@@ -35,6 +36,8 @@ const router = (
           <Route path="/fenlei" component={Fenlei}/>
           <Route path="/list/:myid" component={List} exact />
           <Route path="/detail/:detailid" component={Detail} exact />
+          <Route path="/search"  component={SearchAll} exact/>
+
 
           {/* 后三页 */}
           <Route path='/Popularity' component={Popularity}></Route>
