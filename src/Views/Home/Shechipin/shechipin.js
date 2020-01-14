@@ -4,8 +4,15 @@ import axios from "axios";
 import Preview from '../Components/Yulan/yulan'
 import Floatbanner from '../Components/FloatNav/floatnav'
 import "./shechipin.css"
+import {withRouter} from 'react-router'
 
-export default class Shechipin extends Component {
+class Shechipin extends Component {
+    listClick(id) {
+      this.props.history.push(`/list/${id}`)
+  }
+  detailClick(id){
+      this.props.history.push(`/detail/${id}`)
+  }
   state = {
     datalist: []
   };
@@ -29,12 +36,12 @@ export default class Shechipin extends Component {
   render() {
     return (
       this.state.datalist.length?
-      <div id="shepin">
+      <div id="shepin" style={{marginBottom:"0.7rem"}}>
           {/* 轮播图 */}
         <Swiper mingzi="shepintop" configure={{pagination: {el: '.swiper-pagination',clickable: true,}}}>
           <div className="swiper-wrapper">
               {this.state.datalist[0].cons.map(item=>
-                <div className="swiper-slide" key={item.href}>
+                <div className="swiper-slide" key={item.href} >
                     <img src={"https://img4.aolaigo.com/group1/"+item.src}
                         style={{ width: "100%" }} />
                 </div>
@@ -55,7 +62,7 @@ export default class Shechipin extends Component {
         </Preview>
 
 
-        {/* 每周推荐 */}
+        {/* 每周特惠 */}
         <ul style={{margin:"0",padding:'0 0.1rem',background:'#f3f3f3'}}>
         <h2
           style={{
@@ -92,7 +99,7 @@ export default class Shechipin extends Component {
         </Swiper> */}
         <Preview mystyle={{flexWrap: 'nowrap',overflowX:"scroll"}}>
             {this.state.datalist[3].coms[1].cons.map(item=>
-                <li key={item.src} style={{width:'1rem',margin:'0 0.05rem 0 0',background:'white'}}>
+                <li key={item.src} style={{width:'1rem',margin:'0 0.05rem 0 0',background:'white'}} >
                     <img src={"https://img4.aolaigo.com/group1/"+item.src} style={{width:'1rem'}}/>
                     <h4>{item.title}</h4>
                     <p>{item.sprice}</p>
@@ -117,7 +124,7 @@ export default class Shechipin extends Component {
         </h2>
         <Floatbanner>
           {this.state.datalist[5].cons.map(item => (
-            <li key={item.src}>
+            <li key={item.src} >
               <img
                 src={"https://img3.aolaigo.com/group1/" + item.src}
               />
@@ -150,7 +157,7 @@ export default class Shechipin extends Component {
         </h2>
         {/* 轮播 */}
         <Swiper mingzi="SPdapaituijian" configure={{slidesPerView: 2,spaceBetween: 0,centeredSlides: true,}}>
-            <div className='swiper-wrapper' style={{height:'1.80rem',padding:"0.50rem 0 1.4rem"}}>
+            <div className='swiper-wrapper' style={{height:'1.80rem',padding:"0.50rem 0 1.4rem"}} >
                 {this.state.datalist[8].cons.map(item=>
                     <div className="swiper-slide" key={item.src} style={{position:"relative"}}>
                         <img src={"https://img3.aolaigo.com/group1/"+item.src} style={{width:"100%"}}/>
@@ -184,7 +191,7 @@ export default class Shechipin extends Component {
         {/* 第一部分 衬衫 */}
         <Preview>
             {this.state.datalist[10].coms[0].cons.map(item=>
-                <li key={item.src} style={{margin:"0"}}>
+                <li key={item.src} style={{margin:"0"}} onClick={()=>this.listClick(item.href2.replace(/.*list.html\?/,''))}>
                   <img src={"https://img3.aolaigo.com/group1/" + item.src} style={{width:'100%',borderRadius:'0.1rem 0.1rem 0 0'}} />
                   <section style={{textAlign:"left",lineHeight:"0.26rem",fontSize:'0.16rem',padding:"0 0.1rem"}}>{item.bname}</section>
                   <section style={{textAlign:"left",lineHeight:"0.l8rem",fontSize:"0.12rem",padding:"0 0.1rem"}}>{item.fontcolor}</section>
@@ -193,7 +200,7 @@ export default class Shechipin extends Component {
         </Preview>
         <Preview mystyle={{flexWrap: 'nowrap',overflowX:"scroll",overflowY:'hidden',margin:'0.1rem 0 0.16rem'}}>
             {this.state.datalist[10].coms[1].cons.map(item=>
-                <li key={item.src} style={{width:'1rem',margin:'0 0.05rem 0 0',background:'white'}}>
+                <li key={item.src} style={{width:'1rem',margin:'0 0.05rem 0 0',background:'white'}} onClick={()=>this.detailClick(item.skuid)}>
                     <img src={"https://img4.aolaigo.com/group1/"+item.src} style={{width:'1rem'}}/>
                     <h4>{item.title}</h4>
                     <p>￥ {item.sprice}</p>
@@ -213,7 +220,7 @@ export default class Shechipin extends Component {
         </Preview>
         <Preview mystyle={{flexWrap: 'nowrap',overflowX:"scroll",overflowY:'hidden',margin:'0.1rem 0 0.16rem'}}>
             {this.state.datalist[11].coms[1].cons.map(item=>
-                <li key={item.src} style={{width:'1rem',margin:'0 0.05rem 0 0',background:'white'}}>
+                <li key={item.src} style={{width:'1rem',margin:'0 0.05rem 0 0',background:'white'}} onClick={()=>this.detailClick(item.skuid)}>
                     <img src={"https://img4.aolaigo.com/group1/"+item.src} style={{width:'1rem'}}/>
                     <h4>{item.title}</h4>
                     <p>￥ {item.sprice}</p>
@@ -233,7 +240,7 @@ export default class Shechipin extends Component {
         </Preview>
         <Preview mystyle={{flexWrap: 'nowrap',overflowX:"scroll",overflowY:'hidden',margin:'0.1rem 0 0.16rem'}}>
             {this.state.datalist[12].coms[1].cons.map(item=>
-                <li key={item.src} style={{width:'1rem',margin:'0 0.05rem 0 0',background:'white'}}>
+                <li key={item.src} style={{width:'1rem',margin:'0 0.05rem 0 0',background:'white'}} onClick={()=>this.detailClick(item.skuid)}>
                     <img src={"https://img4.aolaigo.com/group1/"+item.src} style={{width:'1rem'}}/>
                     <h4>{item.title}</h4>
                     <p>￥ {item.sprice}</p>
@@ -253,7 +260,7 @@ export default class Shechipin extends Component {
         </Preview>
         <Preview mystyle={{flexWrap: 'nowrap',overflowX:"scroll",overflowY:'hidden',margin:'0.1rem 0 0.16rem'}}>
             {this.state.datalist[13].coms[1].cons.map(item=>
-                <li key={item.src} style={{width:'1rem',margin:'0 0.05rem 0 0',background:'white'}}>
+                <li key={item.src} style={{width:'1rem',margin:'0 0.05rem 0 0',background:'white'}} onClick={()=>this.detailClick(item.skuid)}>
                     <img src={"https://img4.aolaigo.com/group1/"+item.src} style={{width:'1rem'}}/>
                     <h4>{item.title}</h4>
                     <p>￥ {item.sprice}</p>
@@ -273,7 +280,7 @@ export default class Shechipin extends Component {
         </Preview>
         <Preview mystyle={{flexWrap: 'nowrap',overflowX:"scroll",overflowY:'hidden',margin:'0.1rem 0 0.16rem'}}>
             {this.state.datalist[14].coms[1].cons.map(item=>
-                <li key={item.src} style={{width:'1rem',margin:'0 0.05rem 0 0',background:'white'}}>
+                <li key={item.src} style={{width:'1rem',margin:'0 0.05rem 0 0',background:'white'}} onClick={()=>this.detailClick(item.skuid)}>
                     <img src={"https://img4.aolaigo.com/group1/"+item.src} style={{width:'1rem'}}/>
                     <h4>{item.title}</h4>
                     <p>￥ {item.sprice}</p>
@@ -289,7 +296,7 @@ export default class Shechipin extends Component {
                     <h3 style={{textAlign:"center",lineHeight:"0.26rem",margin:'0'}}>{item.title}</h3>
                     <p style={{textAlign:"center",lineHeight:"0.2rem"}}>{item.subtitle1}</p>
                   </div>
-                  <img src={"https://img3.aolaigo.com/group1/" + item.src} style={{ width: "100%" ,borderRadius:'0.1rem 0.1rem 0 0'}} />
+                  <img src={"https://img3.aolaigo.com/group1/" + item.src} style={{ width: "100%" ,borderRadius:'0.1rem 0.1rem 0 0'}} onClick={()=>this.listClick(item.href.replace(/.*list.html\?/,''))}/>
                   <section style={{textAlign:"left",lineHeight:"0.26rem",fontSize:'0.16rem',padding:"0 0.1rem"}}>{item.bname}</section>
                   <section style={{textAlign:"left",lineHeight:"0.l8rem",fontSize:"0.12rem",padding:"0 0.1rem"}}>{item.fontcolor}</section>
                 </li>
@@ -297,7 +304,7 @@ export default class Shechipin extends Component {
         </Preview>
         <Preview mystyle={{flexWrap: 'nowrap',overflowX:"scroll",overflowY:'hidden',margin:'0.1rem 0 0.16rem'}}>
             {this.state.datalist[15].coms[1].cons.map(item=>
-                <li key={item.src} style={{width:'1rem',margin:'0 0.05rem 0 0',background:'white'}}>
+                <li key={item.src} style={{width:'1rem',margin:'0 0.05rem 0 0',background:'white'}} onClick={()=>this.detailClick(item.skuid)}>
                     <img src={"https://img4.aolaigo.com/group1/"+item.src} style={{width:'1rem'}}/>
                     <h4>{item.title}</h4>
                     <p>￥ {item.sprice}</p>
@@ -308,12 +315,12 @@ export default class Shechipin extends Component {
         {/* 品牌第二部分 */}
         <Preview>
             {this.state.datalist[16].coms[0].cons.map(item=>
-                <li key={item.src} style={{margin:"0"}}>
+                <li key={item.src} style={{margin:"0"}} onClick={()=>this.detailClick(item.skuid)}>
                   <div style={{padding:'0.1rem',background:"white"}}>
                     <h3 style={{textAlign:"center",lineHeight:"0.26rem",margin:'0'}}>{item.title}</h3>
                     <p style={{textAlign:"center",lineHeight:"0.2rem"}}>{item.subtitle1}</p>
                   </div>
-                  <img src={"https://img3.aolaigo.com/group1/" + item.src} style={{ width: "100%" ,borderRadius:'0.1rem 0.1rem 0 0'}} />
+                  <img src={"https://img3.aolaigo.com/group1/" + item.src} style={{ width: "100%" ,borderRadius:'0.1rem 0.1rem 0 0'}} onClick={()=>this.listClick(item.href.replace(/.*list.html\?/,''))}/>
                   <section style={{textAlign:"left",lineHeight:"0.26rem",fontSize:'0.16rem',padding:"0 0.1rem"}}>{item.bname}</section>
                   <section style={{textAlign:"left",lineHeight:"0.l8rem",fontSize:"0.12rem",padding:"0 0.1rem"}}>{item.fontcolor}</section>
                 </li>
@@ -332,12 +339,12 @@ export default class Shechipin extends Component {
            {/* 品牌第三部分 */}
            <Preview>
             {this.state.datalist[17].coms[0].cons.map(item=>
-                <li key={item.src} style={{margin:"0"}}>
+                <li key={item.src} style={{margin:"0"}} onClick={()=>this.detailClick(item.skuid)}>
                   <div style={{padding:'0.1rem',background:"white"}}>
                     <h3 style={{textAlign:"center",lineHeight:"0.26rem",margin:'0'}}>{item.title}</h3>
                     <p style={{textAlign:"center",lineHeight:"0.2rem"}}>{item.subtitle1}</p>
                   </div>
-                  <img src={"https://img3.aolaigo.com/group1/" + item.src} style={{ width: "100%" ,borderRadius:'0.1rem 0.1rem 0 0'}} />
+                  <img src={"https://img3.aolaigo.com/group1/" + item.src} style={{ width: "100%" ,borderRadius:'0.1rem 0.1rem 0 0'}} onClick={()=>this.listClick(item.href.replace(/.*list.html\?/,''))}/>
                   <section style={{textAlign:"left",lineHeight:"0.26rem",fontSize:'0.16rem',padding:"0 0.1rem"}}>{item.bname}</section>
                   <section style={{textAlign:"left",lineHeight:"0.l8rem",fontSize:"0.12rem",padding:"0 0.1rem"}}>{item.fontcolor}</section>
                 </li>
@@ -370,7 +377,7 @@ export default class Shechipin extends Component {
         </h2>
         <Preview>
         {this.state.datalist[19].cons.map(item => (
-            <li key={item.src} style={{ width: '1.12rem' ,borderRadius:'0.05rem',border:'1px solid #ccc'}}>
+            <li key={item.src} style={{ width: '1.12rem' ,borderRadius:'0.05rem',border:'1px solid #ccc'}} onClick={()=>this.detailClick(item.skuid)}>
               <img
                 src={"https://img3.aolaigo.com/group1/" + item.src}
                 style={{ width:'100%'}}
@@ -388,3 +395,5 @@ export default class Shechipin extends Component {
     )
   }
 }
+
+export default withRouter(Shechipin)

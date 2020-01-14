@@ -20,6 +20,7 @@ import IsSet  from '../Views/Ismy/IsSet/IsSet'
 import Huiyuanma  from '../Views/Ismy/Huiyuanma/Huiyuanma'
 import Huashenghuiyuan  from '../Views/Ismy/Huashenghuiyuan/Huashenghuiyuan'
 import Management  from '../Views/Ismy/Management/Management'
+import Activity from "../Views/Activity/activity";
 
 const router = (
   <Provider store={Store}>
@@ -31,6 +32,8 @@ const router = (
           <Route from="/index" component={Home} exact/>
           {/* <Route psth='/index' render={()=><Home></Home>}/> */}
           {/* <Route from="/activity/:myid" component={} exact/> */}
+          <Route from="/activity/:myid" component={Activity} exact/>
+
 
           <Route path="/fenlei" component={Fenlei}/>
           <Route path="/list/:myid" component={List} exact />

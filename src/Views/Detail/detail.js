@@ -23,7 +23,7 @@ class Detail extends Component {
                 <div className="swiper-wrapper">
                     {   this.state.detailinfo.imgUrls.map((item,index)=>
                         <div className="swiper-slide" key={index}>{
-                            <img src={"https://img4.aolaigo.com/group1/"+item}
+                            <img src={"https://img4.aolaigo.com/group1/"+item.replace(/http.*group1/,'')}
                             style={{width:'100%'}}/>
                             }</div>
                         )

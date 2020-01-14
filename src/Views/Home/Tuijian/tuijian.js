@@ -3,9 +3,15 @@ import Swiper from "@/Components/Swiper/swiper";
 import Preview from "../Components/Yulan/yulan";
 import Floatbanner from '../Components/FloatNav/floatnav'
 
-// import {withRouter} from 'react-router'
+import {withRouter} from 'react-router'
 
 class Tuijian extends Component {
+  listClick(id) {
+    this.props.history.push(`/list/${id}`)
+}
+detailClick(id){
+    this.props.history.push(`/detail/${id}`)
+}
   handleClick(id){
     this.props.history.push(`/activity/${id}`)
   }
@@ -15,7 +21,7 @@ class Tuijian extends Component {
     var datalist = this.props.detail;
     return (
       this.props.detail?
-      <div id="indextuijian">
+      <div id="indextuijian" style={{marginBottom:"0.7rem"}}>
         {/* 轮播 */}
         <Swiper mingzi="topnavswiper" configure={{pagination: {el: '.swiper-pagination',clickable: true,}}}>
         <div className="swiper-wrapper">
@@ -102,6 +108,7 @@ class Tuijian extends Component {
           {datalist[15].cons.map(item => (
             <li
               key={item.src}
+              onClick={()=>this.listClick(item.href2.replace(/.*list.html\?/,''))}
             >
               <img
                 src={"https://img3.aolaigo.com/group1/" + item.src}
@@ -124,7 +131,7 @@ class Tuijian extends Component {
         <Swiper mingzi='zhuanguitongkuan1' configure={{pagination: {el: '.swiper-pagination',clickable: true,}}}>
         <div className="swiper-wrapper">
           {datalist[18].coms[0].coms[0].cons.map(item => (
-            <div className="swiper-slide" key={item.src}>
+            <div className="swiper-slide" key={item.src} onClick={()=>this.listClick(item.href2.replace(/.*list.html\?/,''))}>
               <img src={"https://img3.aolaigo.com/group1/" + item.src} style={{ width: "100%" }} />
             </div>
           ))}
@@ -134,7 +141,7 @@ class Tuijian extends Component {
         {/* 分类1 */}
         <Preview mystyle={{padding:'0.1rem'}}>
         {datalist[18].coms[0].coms[1].cons.map(item => (
-            <li key={item.src} style={{flex:'1',padding:'0'}}>
+            <li key={item.src} style={{flex:'1',padding:'0'}} onClick={()=>this.listClick(item.href2.replace(/.*list.html\?/,''))}>
               <img src={"https://img3.aolaigo.com/group1/" + item.src} style={{ width: "100%" }} />
         <h3 style={{ fontSize:'0.12rem'}}>{item.title}</h3>
             </li>
@@ -143,7 +150,7 @@ class Tuijian extends Component {
         {/* 品牌1 */}
         <Preview mystyle={{padding:'0.1rem'}}>
         {datalist[18].coms[0].coms[2].cons.map(item => (
-            <li key={item.src} style={{width:'0.65rem',border:'1px solid #ccc',borderRadius:'5px',padding:'0',margin:'0 0.03rem 0 0.01rem'}}>
+            <li key={item.src} style={{width:'0.65rem',border:'1px solid #ccc',borderRadius:'5px',padding:'0',margin:'0 0.03rem 0 0.01rem'}} onClick={()=>this.listClick(item.href2.replace(/.*list.html\?/,''))}>
               <img src={"https://img3.aolaigo.com/group1/" + item.src} style={{ width: "100%" }} />
             </li>
           ))}
@@ -152,7 +159,7 @@ class Tuijian extends Component {
         <Swiper mingzi='zhuanguitongkuan2' configure={{pagination: {el: '.swiper-pagination',clickable: true,}}}>
         <div className="swiper-wrapper">
           {datalist[18].coms[1].coms[0].cons.map(item => (
-            <div className="swiper-slide" key={item.src}>
+            <div className="swiper-slide" key={item.src} onClick={()=>this.listClick(item.href2.replace(/.*list.html\?/,''))}>
               <img src={"https://img3.aolaigo.com/group1/" + item.src} style={{ width: "100%" }} />
             </div>
           ))}
@@ -162,7 +169,7 @@ class Tuijian extends Component {
         {/* 分类2 */}
         <Preview mystyle={{padding:'0.1rem'}}>
         {datalist[18].coms[1].coms[1].cons.map(item => (
-            <li key={item.src} style={{flex:'1',padding:"0"}}>
+            <li key={item.src} style={{flex:'1',padding:"0"}} onClick={()=>this.listClick(item.href2.replace(/.*list.html\?/,''))}>
               <img src={"https://img3.aolaigo.com/group1/" + item.src} style={{ width: "0.62rem" }} />
         <p style={{fontSize:'0.12rem',width:'100%',overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap'}}>{item.title}</p>
             </li>
@@ -171,7 +178,7 @@ class Tuijian extends Component {
         {/* 品牌2 */}
         <Preview mystyle={{padding:'0.1rem'}}>
         {datalist[18].coms[1].coms[2].cons.map(item => (
-            <li key={item.src} style={{width:'0.65rem',margin:'0.03rem',border:'1px solid #ccc',borderRadius:'5px'}}>
+            <li key={item.src} style={{width:'0.65rem',margin:'0.03rem',border:'1px solid #ccc',borderRadius:'5px'}} onClick={()=>this.listClick(item.href2.replace(/.*list.html\?/,''))}>
               <img src={"https://img3.aolaigo.com/group1/" + item.src} style={{ width: "100%" }} />
             </li>
           ))}
@@ -190,7 +197,7 @@ class Tuijian extends Component {
         {/* 推荐商品预览 */}
         <Preview mystyle={{padding:'0.1rem'}}>
         {datalist[20].cons.map(item => (
-            <li key={item.src} style={{ width: '1.12rem' ,borderRadius:'5px',border:'1px solid #ccc'}}>
+            <li key={item.src} style={{ width: '1.12rem' ,borderRadius:'5px',border:'1px solid #ccc'}} onClick={()=>this.detailClick(item.skuid)}>
               <img
                 src={"https://img3.aolaigo.com/group1/" + item.src}
                 style={{ width:'100%'}}
@@ -217,4 +224,4 @@ class Tuijian extends Component {
   }
 }
 
-export default Tuijian
+export default withRouter(Tuijian)

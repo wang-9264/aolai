@@ -2,8 +2,15 @@ import React, { Component } from 'react'
 import Swiper from "@/Components/Swiper/swiper";
 import axios from "axios";
 import Preview from '../Components/Yulan/yulan'
+import {withRouter} from 'react-router'
 
-export default class Tongzhuang extends Component {
+class Tongzhuang extends Component {
+    listClick(id) {
+        this.props.history.push(`/list/${id}`)
+    }
+    detailClick(id){
+        this.props.history.push(`/detail/${id}`)
+    }
     state = {
         datalist: []
       };
@@ -27,12 +34,12 @@ export default class Tongzhuang extends Component {
     render() {
         return (
             this.state.datalist.length?
-            <div style={{background:'#f3f3f3'}}>
+            <div style={{background:'#f3f3f3',marginBottom:"0.7rem"}}>
                 {/* 轮播 */}
                 <Swiper mingzi="tongzhuangtop" configure={{pagination: {el: '.swiper-pagination',clickable: true,}}}>
                 <div className="swiper-wrapper">
                     {this.state.datalist[0].cons.map(item=>
-                        <div className="swiper-slide" key={item.href}>
+                        <div className="swiper-slide" key={item.href} onClick={()=>this.listClick(item.href.replace(/.*list.html\?/,''))}>
                             <img src={"https://img4.aolaigo.com/group1/"+item.src}
                                 style={{ width: "100%" }} />
                         </div>
@@ -57,7 +64,7 @@ export default class Tongzhuang extends Component {
                 </h2>
                 <Preview mystyle={{justifyContent: "spaceBetween",padding:'0 0.1rem'}}>
                 {this.state.datalist[2].cons.map(item => (
-                <li key={item.src} style={{flex:'1'}}>
+                <li key={item.src} style={{flex:'1'}} onClick={()=>this.listClick(item.href.replace(/.*list.html\?/,''))}>
                 <img
                     src={"https://img3.aolaigo.com/group1/" + item.src}
                     style={{borderRadius:'0.05rem'}}
@@ -70,6 +77,7 @@ export default class Tongzhuang extends Component {
                     <li
                     key={item.src}
                     style={{flex:'1'}}
+                    onClick={()=>this.listClick(item.href.replace(/.*list.html\?/,''))}
                     >
                     <img
                         src={"https://img3.aolaigo.com/group1/" + item.src}
@@ -95,11 +103,10 @@ export default class Tongzhuang extends Component {
                 </h2>
                 <Preview mystyle={{flexWrap: 'nowrap',overflowX:"scroll",overflowY:'hidden',margin:'0',padding:"0.1rem"}}>
                 {this.state.datalist[5].cons.map(item=>
-                    <li key={item.src} style={{width:'1rem',margin:'0 0.05rem 0 0',background:'white'}}>
+                    <li key={item.src} style={{width:'1rem',margin:'0 0.05rem 0 0',background:'white'}} onClick={()=>this.listClick(item.href.replace(/.*list.html\?/,''))}>
                         <img src={"https://img4.aolaigo.com/group1/"+item.src} style={{width:'1rem'}}/>
                     </li>
                     )}
-                <div> 点击查看更多</div>
                 </Preview>
 
 
@@ -119,74 +126,74 @@ export default class Tongzhuang extends Component {
                 {/* 第一部分 */}
                 <Preview mystyle={{padding:'0 0.1rem'}}>
                 {this.state.datalist[7].coms[0].cons.map(item=>
-                    <li key={item.src} style={{margin:"0"}}>
+                    <li key={item.src} style={{margin:"0"}} onClick={()=>this.listClick(item.href.replace(/.*list.html\?/,''))}>
                     <img src={"https://img3.aolaigo.com/group1/" + item.src} style={{width:'100%',borderRadius:'0.1rem 0.1rem 0 0'}} />
                     </li>
                     )}
                 </Preview>
                 <Preview mystyle={{flexWrap: 'nowrap',overflowX:"scroll",overflowY:'hidden',margin:'0',padding:"0.1rem"}}>
                 {this.state.datalist[7].coms[1].cons.map(item=>
-                    <li key={item.src} style={{width:'1rem',margin:'0 0.05rem 0 0',background:'white'}}>
-                        <img src={"https://img4.aolaigo.com/group1/"+(item.src).replace(/http.*group1/,'')} style={{width:'1rem'}}/>
+                    <li key={item.src} style={{width:'1rem',margin:'0 0.05rem 0 0',background:'white'}} onClick={()=>this.detailClick(item.skuid)}>
+                        <img src={"https://img4.aolaigo.com/group1/"+item.src?(item.src).replace(/http.*group1/,''):"M00/4E/9F/CggUF11NGAaAepDIAAECU5wrGmk878=240x4096.jpg"} style={{width:'1rem'}}/>
                         <h4>{item.title}</h4>
                         <p>￥ {item.sprice}</p>
                     </li>
                     )}
-                    <div> 点击查看更多</div>
+                    <div onClick={()=>this.listClick(this.state.datalist[7].coms[0].cons[0].skuid.replace(/.*list.html\?/,''))}> 点击查看更多</div>
                 </Preview>
                 {/* 第二部分 */}
                 <Preview mystyle={{padding:'0 0.1rem'}}>
                 {this.state.datalist[8].coms[0].cons.map(item=>
-                    <li key={item.src} style={{margin:"0"}}>
+                    <li key={item.src} style={{margin:"0"}} onClick={()=>this.listClick(item.href.replace(/.*list.html\?/,''))}>
                     <img src={"https://img3.aolaigo.com/group1/" + item.src} style={{width:'100%',borderRadius:'0.1rem 0.1rem 0 0'}} />
                     </li>
                     )}
                 </Preview>
                 <Preview mystyle={{flexWrap: 'nowrap',overflowX:"scroll",overflowY:'hidden',margin:'0',padding:"0.1rem"}}>
                 {this.state.datalist[8].coms[1].cons.map(item=>
-                    <li key={item.src} style={{width:'1rem',margin:'0 0.05rem 0 0',background:'white'}}>
+                    <li key={item.src} style={{width:'1rem',margin:'0 0.05rem 0 0',background:'white'}} onClick={()=>this.detailClick(item.skuid)}>
                         <img src={"https://img4.aolaigo.com/group1/"+(item.src).replace(/http.*group1/,'')} style={{width:'1rem'}}/>
                         <h4>{item.title}</h4>
                         <p>￥ {item.sprice}</p>
                     </li>
                     )}
-                    <div> 点击查看更多</div>
+                    <div onClick={()=>this.listClick(this.state.datalist[8].coms[0].cons[0].skuid.replace(/.*list.html\?/,''))}> 点击查看更多</div>
                 </Preview>
                 {/* 第三部分 */}
                 <Preview mystyle={{padding:'0 0.1rem'}}>
                 {this.state.datalist[9].coms[0].cons.map(item=>
-                    <li key={item.src} style={{margin:"0"}}>
+                    <li key={item.src} style={{margin:"0"}} onClick={()=>this.listClick(item.href.replace(/.*list.html\?/,''))}>
                     <img src={"https://img3.aolaigo.com/group1/" + item.src} style={{width:'100%',borderRadius:'0.1rem 0.1rem 0 0'}} />
                     </li>
                     )}
                 </Preview>
                 <Preview mystyle={{flexWrap: 'nowrap',overflowX:"scroll",overflowY:'hidden',margin:'0',padding:"0.1rem"}}>
                 {this.state.datalist[9].coms[1].cons.map(item=>
-                    <li key={item.src} style={{width:'1rem',margin:'0 0.05rem 0 0',background:'white'}}>
+                    <li key={item.src} style={{width:'1rem',margin:'0 0.05rem 0 0',background:'white'}} onClick={()=>this.detailClick(item.skuid)}>
                         <img src={"https://img4.aolaigo.com/group1/"+ (item.src?(item.src).replace(/http.*group1/,''):"")} style={{width:'1rem'}}/>
                         <h4>{item.title}</h4>
                         <p>￥ {item.sprice}</p>
                     </li>
                     )}
-                    <div> 点击查看更多</div>
+                    <div onClick={()=>this.listClick(this.state.datalist[9].coms[0].cons[0].skuid.replace(/.*list.html\?/,''))}> 点击查看更多</div>
                 </Preview>
                 {/* 第四部分 */}
                 <Preview mystyle={{padding:'0 0.1rem'}}>
                 {this.state.datalist[10].coms[0].cons.map(item=>
-                    <li key={item.src} style={{margin:"0"}}>
+                    <li key={item.src} style={{margin:"0"}} onClick={()=>this.listClick(item.href.replace(/.*list.html\?/,''))}>
                     <img src={"https://img3.aolaigo.com/group1/" + item.src} style={{width:'100%',borderRadius:'0.1rem 0.1rem 0 0'}} />
                     </li>
                     )}
                 </Preview>
                 <Preview mystyle={{flexWrap: 'nowrap',overflowX:"scroll",overflowY:'hidden',margin:'0',padding:"0.1rem"}}>
                 {this.state.datalist[10].coms[1].cons.map(item=>
-                    <li key={item.src} style={{width:'1rem',margin:'0 0.05rem 0 0',background:'white'}}>
+                    <li key={item.src} style={{width:'1rem',margin:'0 0.05rem 0 0',background:'white'}} onClick={()=>this.detailClick(item.skuid)}>
                         <img src={"https://img4.aolaigo.com/group1/"+ (item.src).replace(/http.*group1/,'')} style={{width:'1rem'}}/>
                         <h4>{item.title}</h4>
                         <p>￥ {item.sprice}</p>
                     </li>
                     )}
-                    <div> 点击查看更多</div>
+                    <div onClick={()=>this.listClick(this.state.datalist[10].coms[0].cons[0].skuid.replace(/.*list.html\?/,''))}> 点击查看更多</div>
                 </Preview>
                 
 
@@ -223,7 +230,7 @@ export default class Tongzhuang extends Component {
                 </h2>
                 <Preview mystyle={{padding:'0 0.1rem'}}>
                 {this.state.datalist[16].cons.map(item => (
-                    <li key={item.src} >
+                    <li key={item.src} onClick={()=>this.listClick(item.href.replace(/.*list.html\?/,''))}>
                     <img
                         src={"https://img3.aolaigo.com/group1/" + item.src}
                         style={{width:"1.7rem",borderRadius:'0.05rem',border:'1px solid #ccc'}}
@@ -236,3 +243,5 @@ export default class Tongzhuang extends Component {
         )
     }
 }
+
+export default withRouter(Tongzhuang)
