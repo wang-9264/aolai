@@ -9,16 +9,20 @@ import Nanzhuag from "./Nanzhuang/nanzhuang";
 import Tongzhuang from "./Tongzhuang/tongzhaung";
 import Xiexue from'./Xiebao/xiebao'
 import Tabbar from '@/Components/Tabbar/Tabbar'
+import {withRouter} from 'react-router'
 
 import { Tabs } from "antd";
 import 'antd/dist/antd.css';
 const { TabPane } = Tabs;
 
-export default class Home extends Component {
+class Home extends Component {
+  shousuoClick(){
+    this.props.history.push('/search')
+  }
   state = {
     dataList: null,
     navindex:"1"
-  };
+  }
   componentWillMount() {
     sessionStorage.getItem("indexdata")? this.setState({
         dataList: JSON.parse(sessionStorage.getItem("indexdata"))
@@ -49,7 +53,7 @@ export default class Home extends Component {
             <span className="iconfont icon-location" style={{fontSize:'0.24rem'}}></span>
             <span>大连</span>
           </div>
-          <div style={{flex:'2',margin:'0.1rem 0.05rem',fontSize:'0.16rem',background:'#f8f8f8',borderRadius:'5px',padding:'0.05rem 0.05rem'}}>
+          <div style={{flex:'2',margin:'0.1rem 0.05rem',fontSize:'0.16rem',background:'#f8f8f8',borderRadius:'5px',padding:'0.05rem 0.05rem'}} onClick={()=>this.shousuoClick()}>
             <span className="iconfont icon-fangdajing" style={{fontSize:'0.16rem'}}></span>
             <span>搜索你喜欢的</span>
           </div>
@@ -92,3 +96,5 @@ export default class Home extends Component {
     }
   }
 }
+
+export default withRouter(Home)

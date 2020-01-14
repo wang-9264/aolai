@@ -7,9 +7,9 @@ class Search extends Component{
         return(
             <div className="wang_list_searchbar">
                 <div className="iconfont icon-_zuo wang_list_searchbar_icon" onClick={this.handleClick.bind(this)}></div>
-                <form className="search-form">
+                <form className="search-form" >
                     <label className="search-form-lable">
-                        <input type="text" placeholder="搜索您喜欢的商品" className="search-form-input"/>
+                        <input type="text" placeholder="搜索您喜欢的商品" className="search-form-input" onClick={this.handleClick2.bind(this)} />
                         <div className="iconfont icon-fangdajing search-form-sousuo"></div>
                     </label>
                 </form>
@@ -18,6 +18,10 @@ class Search extends Component{
     }
     handleClick(){
         this.props.history.goBack()
+    }
+
+    handleClick2(){
+        this.props.history.push('/search')
     }
 }
 

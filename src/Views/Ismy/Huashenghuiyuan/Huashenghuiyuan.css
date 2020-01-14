@@ -1,13 +1,71 @@
-.member_touxiang{
-height: .93rem;
+.member_touxiang {
+    height: .93rem;
+    border-top: .01rem solid #ccc;
+    background: #fff;
+    margin-bottom: .1rem;
 }
-.member_img{
+
+.member_index {
+    background: #eeeeee;
+}
+
+.member_img {
     height: .7rem;
     float: right;
     margin-right: .16rem;
+    margin-top: .085rem;
+    border-radius: .05rem;
 }
-.member_avatar{
+
+.member_avatar {
     float: left;
-    line-height: .93rem;
+    line-height: .92rem;
     margin-left: .16rem;
+}
+
+.member_nav {
+    height: .52rem;
+    line-height: .52rem;
+    border-bottom: .01rem solid #d1d1d1;
+    margin: 0 .15rem;
+}
+
+.member_nav_l {
+    float: left;
+}
+
+.member_nav_r {
+    float: right;
+}
+
+.member_icon {
+    display: inline-block;
+    padding-left: .1rem;
+}
+
+.member_out {
+    background: #fff;
+}
+
+.member_nav1 {
+    border: 0;
+}
+
+.member_tuijian_img {
+    margin: 0 auto;
+    width: .7rem;
+    display: inline;
+
+}
+
+.member_tuijian {
+    float: left;
+    width: 33%;
+    text-align: center;
+}
+.member_xing1{
+    color: #ccc;
+}
+.member_xing2{
+    color: red;
 }
