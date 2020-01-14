@@ -10,7 +10,7 @@
     float: left;
     width: 20%;
     text-align: center;
-    color: #666666;
+    color: #666666!important;
     font-size: .12rem;
     margin-top: .05rem;
 }
@@ -19,5 +19,9 @@
 }
 .tabbar_color{
     color: red!important;
+}
+a{
+    color: #666666!important;
+
 }
 

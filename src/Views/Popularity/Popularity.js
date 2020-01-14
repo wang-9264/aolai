@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import Axios from 'axios'
 import './Popularity.css'
 import Tabbar from '@/Components/Tabbar/Tabbar'
-
-export default class Popularity extends Component {
+import {withRouter} from 'react-router-dom'
+ class Popularity extends Component {
     state = {
         datalist: [],
         subtitle2:'',
@@ -13,12 +13,12 @@ export default class Popularity extends Component {
     componentDidMount() {
         Axios.post('https://cms.aolaigo.com/Handler/app_ActivityHandler.ashx', '{"os":"wap","opt":1,"cmd":1,"id":"4015"}')
             .then(res => {
-                // console.log(res.data)
+                console.log(res.data)
                 this.setState({
                     datalist: res.data.data[0].cons
 
                 })
-                // console.log(this.state)
+                console.log(this.state.datalist)
             })
     }
     render() {
@@ -29,7 +29,7 @@ export default class Popularity extends Component {
                     <li className="head">人气优品</li>
             </div>
             {this.state.datalist.map((item,index) => (
-            <div className="index">
+            <div className="index" key={item.src} onClick={()=>this.handleClick(item.skuid)}>
 
                 
                 <img className="PopularityImg" src={`https://img1.aolaigo.com/group1/${item.src}`} key={item.subtitle2} />
@@ -50,6 +50,10 @@ export default class Popularity extends Component {
             <Tabbar></Tabbar>
             </div>  
     }
+    handleClick=(index)=>{
+        this.props.history.push(`/detail/${index}`)
+        console.log(index)
+    }
     PopularityClick(qqq){
         var aa=[]
         aa = this.state.datalist.slice()
@@ -57,7 +61,7 @@ export default class Popularity extends Component {
             isSora: !this.state.isSora,
         })
         this.state.isSora=!this.state.isSora
-        console.log(qqq)
+        // console.log(qqq)
         if(this.state.isSora===true){
         aa[qqq].subtitle2=(parseInt(aa[qqq].subtitle2)+1).toString()
             // this.span.className='iconfont icon-like-line'
@@ -74,3 +78,5 @@ export default class Popularity extends Component {
     }
     isShow
 }
+
+export default withRouter(Popularity)
