@@ -20,7 +20,22 @@ import Ismy from '../Views/Ismy/Ismy'
 import IsSet  from '../Views/Ismy/IsSet/IsSet'
 import Huiyuanma  from '../Views/Ismy/Huiyuanma/Huiyuanma'
 import Huashenghuiyuan  from '../Views/Ismy/Huashenghuiyuan/Huashenghuiyuan'
-import Management  from '../Views/Ismy/Management/Management'
+import Management  from '../Views/Ismy/Management/management'
+
+import ChengZhangZhi  from '../Views/Ismy/ChengZhangZhi/chengzhangzhi'
+import YuGuJiangLi  from '../Views/Ismy/YuGuJiangLi/yugujiangli'
+import HuaSheng  from '../Views/Ismy/HuaSheng/huasheng'
+import DaiFuKuan  from '../Views/Ismy/DaiFuKuan/daifukuan'
+import DaiFaHuo  from '../Views/Ismy/DaiFaHuo/daifahuo'
+import DaiShouHuo  from '../Views/Ismy/DaiShouHuo/daishouhuo'
+import TuiHuanHuo  from '../Views/Ismy/TuiHuanHuo/tuihuanhuo'
+import QuanBuDingDan  from '../Views/Ismy/QuanBuDingDan/quanbudingdan'
+
+import YouHuiQuan  from '../Views/Ismy/YouHuiQuan/youhuiquan'
+import HongBao  from '../Views/Ismy/HongBao/hongbaao'
+import ZuJi  from '../Views/Ismy/ZuJi/zuji'
+import KeFu  from '../Views/Ismy/KeFu/kefu'
+import ShouCang  from '../Views/Ismy/ShouCang/shoucang'
 
 const router = (
   <Provider store={Store}>
@@ -47,6 +62,28 @@ const router = (
           <Route path='/Huiyuanma' component={Huiyuanma}></Route>
           <Route path='/Huashenghuiyuan' component={Huashenghuiyuan}></Route>
           <Route path='/Management' component={Management}></Route>
+
+          <Route path='/Chengzhangzhi' component={ChengZhangZhi}></Route>
+          <Route path='/Yugujiangli' component={YuGuJiangLi}></Route>
+          <Route path='/Huasheng' component={HuaSheng}></Route>
+          <Route path='/Daifukuan' component={DaiFuKuan}></Route>
+
+          <Route path='/Daifahuo' component={DaiFaHuo}></Route>
+          <Route path='/Daishouhuo' component={DaiShouHuo}></Route>
+          <Route path='/Tuihuanhuo' component={TuiHuanHuo}></Route>
+          <Route path='/Quanbudingdan' component={QuanBuDingDan}></Route>
+
+          <Route path='/Youhuiquan' component={YouHuiQuan}></Route>
+          <Route path='/Hongbao' component={HongBao}></Route>
+          <Route path='/Zuji' component={ZuJi}></Route>
+          <Route path='/Kefu' component={KeFu}></Route>
+          <Route path='/Shoucang' component={ShouCang}></Route>
+
+
+
+
+
+
 
           <Redirect from='/' to='/index' />
         </Switch>

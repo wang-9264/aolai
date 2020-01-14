@@ -62,7 +62,7 @@ import {
                         <div className="ismy_nav_top_l" onClick={this.huiyuanma}><span className="iconfont icon-erweima"></span>会员码</div>
                         <div className="ismy_nav_top_c" onClick={this.huashenghuiyuan}>
                             <div className="iconfont_guodu">
-                                <span class="iconfont icon-wode">
+                                <span className="iconfont icon-wode">
                                 </span>
                             </div>
                             <span className="ismy_id">
@@ -72,71 +72,71 @@ import {
                         <div className="ismy_nav_top_r" onClick={this.management}><span className="iconfont icon-yuandianda"></span>花生会员</div>
                     </li>
                     <li className="ismy_nav_btn">
-                        <div className="iconfont_nav ismy_nav_btn_1">
+                        <div className="iconfont_nav ismy_nav_btn_1" onClick={this.goChengZhangZhi}>
                             <div>
                                 {this.state.datalist.growth}
                             </div>
-                            <div className="ismy_nav_icon"><span class="iconfont icon-zhuzhuangtu"></span>成长值</div>
+                            <div className="ismy_nav_icon"><span className="iconfont icon-zhuzhuangtu"></span>成长值</div>
                         </div>
-                        <div className="iconfont_nav ismy_nav_btn_2">
+                        <div className="iconfont_nav ismy_nav_btn_2" onClick={this.yugujiangli}>
                             <div>
                                 {this.state.datalist.growth_start}
                             </div>
                             <div className="ismy_nav_icon">
-                                <span class="iconfont icon-qian"></span> 预估奖励
+                                <span className="iconfont icon-qian"></span> 预估奖励
                             </div>
                         </div>
-                        <div className="iconfont_nav ismy_nav_btn_3">
+                        <div className="iconfont_nav ismy_nav_btn_3" onClick={this.huasheng}>
                             <div>
                                 {this.state.datalist.credits}
                             </div>
                             <div className="ismy_nav_icon">
-                                <span class="iconfont icon-huasheng"></span>花生
+                                <span className="iconfont icon-huasheng"></span>花生
                             </div>
                         </div>
                     </li>
                 </div>
                 <div className="ismy_gongneng">
-                    <li className="ismy_gongneng_li">
-                        <div><span class="ismy_gongneng_li_icon iconfont icon-qianbao-"></span></div>
+                    <li className="ismy_gongneng_li" onClick={this.daifukuan}>
+                        <div><span className="ismy_gongneng_li_icon iconfont icon-qianbao-"></span></div>
                         <div>待付款</div>
                     </li>
-                    <li className="ismy_gongneng_li">
-                        <div><span class="ismy_gongneng_li_icon iconfont icon-daifahuo"></span></div>
+                    <li className="ismy_gongneng_li" onClick={this.daifahuo}>
+                        <div><span className="ismy_gongneng_li_icon iconfont icon-daifahuo"></span></div>
                         <div>待发货</div>
                     </li>
-                    <li className="ismy_gongneng_li">
-                        <div><span class="ismy_gongneng_li_icon iconfont icon-shouhuo"></span></div>
+                    <li className="ismy_gongneng_li" onClick={this.daishouhuo}>
+                        <div><span className="ismy_gongneng_li_icon iconfont icon-shouhuo"></span></div>
                         <div>待收货</div>
                     </li>
-                    <li className="ismy_gongneng_li">
-                        <div><span class="ismy_gongneng_li_icon iconfont icon-tuihuanhuo"></span></div>
+                    <li className="ismy_gongneng_li" onClick={this.tuihuanhuo}>
+                        <div><span className="ismy_gongneng_li_icon iconfont icon-tuihuanhuo"></span></div>
                         <div>退换货</div>
                     </li>
-                    <li className="ismy_danduyangshi ismy_gongneng_li">
-                        <div><span class=" ismy_gongneng_li_icon iconfont icon-dingdan"></span></div>
+                    <li className="ismy_danduyangshi ismy_gongneng_li" onClick={this.quanbudingdan}>
+                        <div><span className=" ismy_gongneng_li_icon iconfont icon-dingdan"></span></div>
                         <div>全部订单</div>
                     </li>
                 </div>
                 <div className="ismy_youhuiquan">
-                    <li className="ismy_youhuiquan_li">
-                        <div><span class="ismy_youhuiquan_icon iconfont icon-liwu"></span></div>
+                    <li className="ismy_youhuiquan_li" onClick={this.youhuiquan}>
+                        <div><span className="ismy_youhuiquan_icon iconfont icon-liwu"></span></div>
                         <div>优惠券</div>
                     </li>
-                    <li className="ismy_youhuiquan_li">
-                        <div><span class="ismy_youhuiquan_icon iconfont icon-hongbao"></span></div>
+                    <li className="ismy_youhuiquan_li" onClick={this.hongbao}>
+                        <div><span className="ismy_youhuiquan_icon iconfont icon-hongbao"></span></div>
                         <div>红包</div>
                     </li>
-                    <li className="ismy_youhuiquan_li">
-                        <div><span class="ismy_youhuiquan_icon iconfont icon-zuji"></span></div>
+                    <li className="ismy_youhuiquan_li" onClick={this.zuji}>
+                        <div><span className="ismy_youhuiquan_icon iconfont icon-zuji"></span></div>
                         <div>足迹</div>
                     </li>
-                    <li className="ismy_youhuiquan_li">
-                        <div><span class="ismy_youhuiquan_icon iconfont icon-kefu2"></span></div>
+                    <li className="ismy_youhuiquan_li" onClick={this.kefu}>
+                        <div><span className="ismy_youhuiquan_icon iconfont icon-kefu2"></span></div>
                         <div>客服与反馈</div>
                     </li>
-                    <li className="ismy_youhuiquan_li">
-                        <div><span class="ismy_youhuiquan_icon iconfont icon-xing1"></span></div>
+                    <li className="ismy_youhuiquan_li" onClick={this.shoucang}>
+                        <div><span className="ismy_youhuiquan_icon iconfont icon-xing1"></span></div>
                         <div>收藏</div>
                     </li>
                 </div>
@@ -149,7 +149,7 @@ import {
                 </div>
                 <div className="ismy_recommend">
                     {this.state.datacost.map((item,index)=>(
-                            <div className="ismy_recommend_div">
+                            <div className="ismy_recommend_div" key={index} onClick={()=>(this.goback(item.sku_id))}>
                                 <img className="ismy_recommend_img" src={`https://img1.aolaigo.com/group1/${item.product_image}`} key={item.sku_id} />
                                 <div  className="ismy_recommend_name">
                                     {item.product_name}
@@ -166,6 +166,10 @@ import {
             </div>
         )
     }
+    goback=(index)=>{
+        this.props.history.push(`/detail/${index}`)
+
+    }
     goSet = ()=>{
         this.props.history.push('/IsSet')
     }
@@ -178,5 +182,49 @@ import {
     management = ()=>{
         this.props.history.push('Management')
     }
+    goChengZhangZhi=()=>{
+        this.props.history.push('/ChengZhangZhi')
+    }
+   yugujiangli=()=>{
+        this.props.history.push('/Yugujiangli')
+    }
+    huasheng=()=>{
+        this.props.history.push('/Huasheng')
+
+    }
+    daifukuan=()=>{
+        this.props.history.push('/Daifukuan')
+
+    }
+    daifahuo=()=>{
+        this.props.history.push('/Daifahuo')
+
+    }
+    daishouhuo=()=>{
+        this.props.history.push('/Daishouhuo')
+
+    }
+    tuihuanhuo=()=>{
+        this.props.history.push('/Tuihuanhuo')
+
+    }
+    quanbudingdan=()=>{
+        this.props.history.push('/Quanbudingdan')
+    }
+    youhuiquan=()=>{
+        this.props.history.push('/Youhuiquan')
+    }
+    zuji=()=>{
+        this.props.history.push('/Zuji')
+    }
+    hongbao=()=>{
+        this.props.history.push('/Hongbao')
+    }
+    kefu=()=>{
+        this.props.history.push('/Kefu')
+    }
+    shoucang=()=>{
+        this.props.history.push('/Shoucang')
+    }    
 }
 export default withRouter(Ismy)
