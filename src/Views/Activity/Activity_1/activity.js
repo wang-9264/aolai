@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Preview from "../../Home/Components/Yulan/yulan";
-import Daohang from '@/Components/Daohang/daohang';
 
 
 export default class activity extends Component {
@@ -16,7 +15,6 @@ export default class activity extends Component {
         return (
             this.state.datalist.length?
                 <div style={{background:'#f3f3f3'}}>
-                <Daohang></Daohang>
                 {/* 奥莱钜惠 */}
                 {this.state.datalist[0].cons.map(item=>
                   <img src={"https://img4.aolaigo.com/group1/"+(item.src).replace(/.*group1/,'')} style={{width:"50%",margin:"0",padding:'0',float:"left"}} key={item.src}/>

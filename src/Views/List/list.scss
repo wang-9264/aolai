@@ -26,7 +26,7 @@
         }
         .wang_list_bar_change{
             width: 14%;
-            font-size: 14px;
+            font-size: 0.16rem;
         }
     }
     .wang_list_wrap{
@@ -82,6 +82,16 @@
                         white-space: nowrap;
                         
                     }
+                    mark{
+                        display: inline-block;
+                        background: #007acc;
+                        border-radius: 0.05rem;
+                        height:0.2rem;
+                        line-height: 0.16rem;
+                        font-size: 0.12rem;
+                        margin: 0.06rem 0.1rem 0 0;
+                        color:white
+                    }
                 }
                 .wang_list_info_under_bottom{
                     font-size: 12px;
@@ -111,4 +121,72 @@
         // bottom: 0.2rem;
         z-index: 99999;
     }
+}
+
+
+//每行单品排版
+.wang_danpinpaiban{
+    position: absolute;
+    top: 0.9rem;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+    .wang_danpin_mapwrap{
+        width:100%;
+        display: flex;
+    img{
+        width:1.3rem;
+        padding-bottom: 0.05rem;
+        float: left;
+        
+    }
+    .wang_danpinwenzi{
+        display: block;
+        padding:0.1rem;
+        .wang_danpinziying{
+            height:0.46rem;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            -webkit-line-clamp:2;
+            display: -webkit-box;
+            -webkit-box-orient:vertical;
+            margin-bottom: 0.1rem;
+            span{
+                display: inline-block;
+                background: #f34;
+                border-radius: 0.05rem;
+                height:0.2rem;
+                line-height: 0.16rem;
+                font-size: 0.12rem;
+                margin: 0.06rem 0.1rem 0 0;
+                color:white
+            }
+            mark{
+                display: inline-block;
+                background: #007acc;
+                border-radius: 0.05rem;
+                height:0.2rem;
+                line-height: 0.16rem;
+                font-size: 0.12rem;
+                margin: 0.06rem 0.1rem 0 0;
+                color:white
+
+            }
+        }
+        .wang_danpinjiange{
+            padding:0.06rem 0;
+            .wang_danpinjiagexin{
+                font-size: 0.16rem;
+                color: #f34;
+            }
+            .wang_danpinjiagejiu{
+                font-size: 0.12rem;
+                color: #999;
+                text-decoration: line-through;
+            }
+        }
+    }
+}
+
 }
