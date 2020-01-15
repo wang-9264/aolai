@@ -47,7 +47,7 @@ export default class chengzhangzhi extends Component {
                                     <div>{this.state.datalist.tel_no}</div>
                                     <span className="mana_huasheng1">
                                         <span>{this.state.datacost.mem_levelname}</span>
-                                        <span class="mana_icon iconfont icon-zuo"></span>
+                                        <span className="mana_icon iconfont icon-zuo"></span>
                                     </span>
                                 </div>
                                 <div>
