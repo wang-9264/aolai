@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Axios from 'axios'
+import './management.scss'
 
 
 
@@ -14,7 +15,7 @@ export default class chengzhangzhi extends Component {
                 this.setState({
                     datalist: res.data.data
                 })
-                console.log(this.state.datalist)
+                // console.log(this.state.datalist)
 
             })
 
@@ -31,7 +32,7 @@ export default class chengzhangzhi extends Component {
     render() {
         return (
             <div>
-                {this.state.datalist && this.state.datacost?
+                {this.state.datalist && this.state.datacost ?
                     <div>
                         <div className="member_index">
                             <div className="huiyuan_head">
@@ -39,15 +40,29 @@ export default class chengzhangzhi extends Component {
                 </div>
                             Kerwin 正在开发中
                 </div>
-                        <div>
-                            <div>
-                                <div>
+                        <div className="mana_1">
+                            <div className="mana_l_head">
+                                <div className="mana_l_t">
                                     <img src={`https://img1.aolaigo.com/group1/${this.state.datalist.icon_img}`} />
-                                    <span>{this.state.datalist.tel_no}</span>
-                                    <div>{this.state.datacost.mem_levelname}</div>
+                                    <div>{this.state.datalist.tel_no}</div>
+                                    <span className="mana_huasheng1">
+                                        <span>{this.state.datacost.mem_levelname}</span>
+                                        <span className="mana_icon iconfont icon-zuo"></span>
+                                    </span>
+                                </div>
+                                <div>
+                                    <div>
+                                        <div>成长值</div>
+                                        <div><span>{this.state.datacost.growth}</span>/<span>{this.state.datacost.growth_end}</span></div>
+                                    </div>
+                                    <div></div>
+
                                 </div>
                             </div>
-                            <div></div>
+                            <div className="mana_r_huasheng">
+                                <div>{this.state.datacost.growth}</div>
+                                <div>花生</div>
+                            </div>
                         </div>
                     </div> : null
                 }

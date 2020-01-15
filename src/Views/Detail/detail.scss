@@ -70,7 +70,7 @@
                 text-overflow: ellipsis;
                 width: 50%;
                 padding-right: 0.06rem;
-                
+                overflow: hidden;
             }
             .sel-chima{
                 float: left;
@@ -80,6 +80,7 @@
                 width: 47%;
                 padding-right: 0.06rem;
                 padding-left: 0.1rem;
+                overflow: hidden;
             }
         }
         .info-delivery{
