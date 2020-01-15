@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
 import axios from "axios";
 import Activity1 from './Activity_1/activity'
+import Activity2 from './Activity_2/activity'
+import Daohang from '@/Components/Daohang/daohang';
 
 import {withRouter} from 'react-router'
+
 
 class Activity extends Component {
     state={
@@ -13,10 +16,9 @@ class Activity extends Component {
         axios
           .post(
             "https://cms.aolaigo.com/Handler/app_ActivityHandler.ashx",
-            `{"os":"wap","opt":1,"cmd":1,"id":"8109"}`
+            `{"os":"wap","opt":1,"cmd":1,"id":"${this.props.match.params.myid}"}`
           )
           .then(res => {
-            sessionStorage.setItem("homeshepin", JSON.stringify(res.data.data));
             this.setState({
               datalist: res.data.data
             });
@@ -24,12 +26,21 @@ class Activity extends Component {
     }
     render() {
       console.log(this.state.datalist)
+      // var qqq=this.props.match.params.myid
         return (
-          this.state.datalist.length?
-          <Activity1 data={this.state.datalist}/>
-            :null
+          <div>
+          <Daohang></Daohang>
+          {this.state.datalist.length?
+          this.props.match.params.myid=='8109'?
+            <Activity1 data={this.state.datalist}></Activity1>:
+            this.props.match.params.myid=='8104'?
+            <Activity2></Activity2>
+            :<div>geiyemianweizuo</div>
+          :null}
+          </div>
         )
     }
 }
 
 export default withRouter(Activity)
+
