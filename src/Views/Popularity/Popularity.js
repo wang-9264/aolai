@@ -23,7 +23,7 @@ import {withRouter} from 'react-router-dom'
     }
     render() {
 
-        return  <div>
+        return  <div style={{marginBottom:'.7rem'}}>
             <div>
             <li className="leftLi"><span className="iconfont icon-_zuo"></span></li>
                     <li className="head">人气优品</li>

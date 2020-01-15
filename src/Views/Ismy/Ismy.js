@@ -51,7 +51,7 @@ import {
     }
     render() {
         return (
-            <div className="ismy_index">
+            <div className="ismy_index"  style={{marginBottom:'.7rem'}}>
                 <h3 className="ismy_h3">
                     <li className="ismy_set">
                         <span className="iconfont icon-set" onClick={this.goSet}></span></li>
