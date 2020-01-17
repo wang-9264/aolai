@@ -35,7 +35,7 @@ class Kuajing extends Component {
     render() {
         return (
             this.state.datalist.length?
-            <div style={{marginBottom:"0.7rem"}}>
+            <div style={{marginBottom:"0.7rem",width:"3.75rem"}}>
             {/* 轮播图 */}
             <Swiper mingzi="kuajingtop" configure={{pagination: {el: '.swiper-pagination',clickable: true,}}}>
             <div className="swiper-wrapper">

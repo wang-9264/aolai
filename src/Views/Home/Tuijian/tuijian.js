@@ -17,11 +17,11 @@ detailClick(id){
   }
 
   render() {
-    // console.log(this.props);
-    var datalist = this.props.detail;
+    // console.log(this.props.data[1],111111);
+    var datalist = this.props.data;
     return (
-      this.props.detail?
-      <div id="indextuijian" style={{marginBottom:"0.7rem"}}>
+     this.props.data?
+      <div id="indextuijian" style={{marginBottom:"0.7rem",width:"100%",zIndex:'50'}}>
         {/* 轮播 */}
         <Swiper mingzi="topnavswiper" configure={{pagination: {el: '.swiper-pagination',clickable: true,}}}>
         <div className="swiper-wrapper">

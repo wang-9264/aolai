@@ -33,9 +33,9 @@ class Activity extends Component {
           {this.state.datalist.length?
           this.props.match.params.myid=='8109'?
             <Activity1 data={this.state.datalist}></Activity1>:
-            this.props.match.params.myid=='8104'?
-            <Activity2></Activity2>
-            :<div>geiyemianweizuo</div>
+            // this.props.match.params.myid=='8104'?
+            <Activity2 data={this.state.datalist}></Activity2>
+            // :<div>该页面没做</div>
           :null}
           </div>
         )

@@ -36,10 +36,10 @@ class Shechipin extends Component {
   render() {
     return (
       this.state.datalist.length?
-      <div id="shepin" style={{marginBottom:"0.7rem"}}>
+      <div id="shepin" style={{marginBottom:"0.7rem",width:"3.75rem"}}>
           {/* 轮播图 */}
         <Swiper mingzi="shepintop" configure={{pagination: {el: '.swiper-pagination',clickable: true,}}}>
-          <div className="swiper-wrapper">
+          <div className="swiper-wrapper" style={{zIndex:"300",width:"3.75rem"}}>
               {this.state.datalist[0].cons.map(item=>
                 <div className="swiper-slide" key={item.href} >
                     <img src={"https://img4.aolaigo.com/group1/"+item.src}
@@ -157,7 +157,7 @@ class Shechipin extends Component {
         </h2>
         {/* 轮播 */}
         <Swiper mingzi="SPdapaituijian" configure={{slidesPerView: 2,spaceBetween: 0,centeredSlides: true,}}>
-            <div className='swiper-wrapper' style={{height:'1.80rem',padding:"0.50rem 0 1.4rem"}} >
+            <div className='swiper-wrapper' style={{height:'3.70rem',padding:"0.50rem 0 1.4rem"}} >
                 {this.state.datalist[8].cons.map(item=>
                     <div className="swiper-slide" key={item.src} style={{position:"relative"}}>
                         <img src={"https://img3.aolaigo.com/group1/"+item.src} style={{width:"100%"}}/>

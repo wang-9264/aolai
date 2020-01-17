@@ -14,7 +14,7 @@ class MySwiper extends Component{
             autoplay:true,
            ...this.props.configure
         }
-        console.log(this.props.configure)
+        // console.log(this.props.configure)
         new Swiper('.'+this.props.mingzi,{...obj})
     }
 }
