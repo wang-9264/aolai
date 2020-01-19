@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Tabs } from 'antd';
-// import { Tabs, WhiteSpace } from 'antd-mobile';
-import 'antd/dist/antd.css'
-// import 'antd-mobile/dist/antd-mobile.css'
+// import { Tabs } from 'antd';
+import { Tabs, WhiteSpace } from 'antd-mobile';
+// import 'antd/dist/antd.css'
+import 'antd-mobile/dist/antd-mobile.css'
 import {getList} from '../../Redux/Actions/list'
 import Item from './Item/item'
 import './fenlei.scss'
@@ -17,36 +17,35 @@ function callback(key) {
 class Fenlei extends Component {
 
     state={
-        tab:[]
+        // datalist:null
     }
+
   render() {
       // console.log(this.props.datalist[0],9999)
       // this.setState({
       //   tab:this.props.datalist[0]
       // })
       // console.log(this.state.tab)
-    return (
+      const tabs=[{title:'推荐'},{title:'全部品牌'},{title:'奢饰品'},{title:'跨境汇'},{title:'自营好货'},{title:'女装'},{title:'男装'},{title:'鞋包'},{title:'内衣'},{title:'婴儿'}]
+      return(this.props.datalist.length ? 
       <div>
         <Search></Search>
-        {this.props.datalist[0]===undefined?null:
-            
-            <Tabs defaultActiveKey="1" onChange={callback} >
-                {
-                  this.props.datalist[0].cons.map((item,index)=>
-                        <TabPane tab={item.title} key={index+1} size="small" tabBarGutter={1}>
-                          {index===1?<Brands></Brands>:
-                        <Item item={this.props.datalist[index+1]}></Item>
-                      }
-                        </TabPane> 
-                    )
-                }
-                {/* <TabPane tab="Tab 1" key="1">
-                Content of Tab Pane 1
-                </TabPane> */}
+            <div className="wang-tabs-aaa">
+            <WhiteSpace />
+            <Tabs tabs={tabs} >
+              {
+                this.props.datalist.map((item,index)=>
+              //   index===2?<Brands></Brands>:
+              // <Item item={this.props.datalist[index+1]}></Item>
+              <div key={item.comTitle}>{index===1?<Brands></Brands>:
+                <Item item={this.props.datalist[index+1]}></Item>}</div>
+                )
+              }
             </Tabs>
-          }
-      </div>
-    );
+            <WhiteSpace />
+            </div>
+      </div>:null
+    )
   }
   componentWillMount(){
       // console.log(this.props,2222)
